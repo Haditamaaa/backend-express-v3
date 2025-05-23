@@ -29,13 +29,13 @@ router.post("/register", validateRegister, registerController.register);
 router.post("/login", validateLogin, loginController.login);
 
 //define route for user
-router.get("/admin/users", verifyToken, userController.findUser);
+router.get("/admin/users", verifyToken, userController.findUsers);
 
 //define route for create
 router.post("/admin/users", verifyToken, validateUser, userController.createUser);
 
 //define route for user by id
-router.post("/admin/users/:id", verifyToken, validateUser, userController.findUserById);
+router.get("/admin/users/:id", verifyToken, validateUser, userController.findUserById);
 
 //define route for user update
 router.put("/admin/users/:id", verifyToken, validateUser, userController.updateUser);
